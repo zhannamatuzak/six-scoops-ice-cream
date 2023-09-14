@@ -1,4 +1,4 @@
- lives_images = {
+ ice_cream_scoops = {
     0: """
                 ( )
               ( ) ( )
