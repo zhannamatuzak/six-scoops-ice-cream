@@ -21,3 +21,21 @@ def run_intro():
     sleep(0.5)
     print(
         f"Here are the rules on how to get your {Style.BRIGHT}Extra Large treat!\n")
+
+
+def game_rules():
+    """
+    Function to ask the player if he wants to read the game rules
+    """
+    while True:
+        print(
+            "Do you want to read the game {Style.BRIGHT}{Fore.Yellow}rules?(Y/N)")
+        answer = input().upper().strip()
+        if answer == "Y":
+            print(intro.RULES)
+            return True
+        elif answer == "N":
+            print("Let's get started!\n")
+            return False
+        else:
+            print("Invalid choice. Please enter 'Y' or 'N'.")
