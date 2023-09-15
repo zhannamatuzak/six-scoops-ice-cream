@@ -33,12 +33,13 @@ All words are related to summer.
 You will start off with 6 scoops of ice cream. 
 
 For each wrong guess you lose one scoop.
-And you can play until you stay only with the cane.
-It is sad 😢
+And you can play until your cane is empty.
+Do not lose! 😢 beacuse it is 🔥 outside.
 
 Cheer up! You can try again 😉, 
 simply restart the game.
 Just press the RUN PROGRAM at the top.
+Good luck! 😎
 """
 
 ice_cream_scoops = {
