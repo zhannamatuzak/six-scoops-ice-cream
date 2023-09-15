@@ -1,3 +1,6 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# import section
+import random  # generates random numbers
+import string  # module for string (ascii, emojis) manipulation
+from time import sleep  # time delay for print statements
+from words import words  # imports word list from word.py
+from colorama import Fore, Back, Style, init  # adds color to terminal text
