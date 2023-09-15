@@ -5,16 +5,17 @@ http://www.patorjk.com/software/taag/#p=display&h=1&f=Big&t=
 """
 
 LOGO = """
+                             🍦🍦🍦🍦🍦🍦
    _____  _____ __   __   _____   _____  ____    ____   _____    _____ 
   / ____||_   _|\ \ / /  / ____| / ____|/ __ \  / __ \ |  __ \  / ____|
  | (___    | |   \ V /  | (___  | |    | |  | || |  | || |__) || (___  
   \___ \   | |    > <    \___ \ | |    | |  | || |  | ||  ___/  \___ \ 
   ____) | _| |_  / . \   ____) || |____| |__| || |__| || |      ____) |
  |_____/ |_____|/_/ \_\ |_____/  \_____|\____/  \____/ |_|     |_____/
-"""
+ """
 
 RULES = """
-Begin by selecting your skill level. 
+Select your skill level. 
 
 The word you have to guess will get longer 
 as your skill level increases.

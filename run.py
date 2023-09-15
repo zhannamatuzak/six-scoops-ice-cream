@@ -7,6 +7,8 @@ import intro
 import colorama
 from colorama import Fore, Back, Style, init  # adds color to terminal text
 
+init(autoreset=True)  # sets text to its default values
+
 
 def run_intro():
     """
@@ -14,8 +16,8 @@ def run_intro():
     """
     print(f"{Style.BRIGHT}{Fore.RED}{intro.LOGO}")
     print("Welcome!")
-    print("Here you can get the Extra Large treat with Six Scoops of Ice Cream.\n")
-    print("🍦🍦🍦🍦🍦🍦")
+    print(f"Here you can get the Extra Large treat\nwith Six {Fore.LIGHTYELLOW_EX}Scoops of Ice Cream.\n")
+    print("🍦🍦🍦🍦🍦🍦\n")
     sleep(1)
     print("Oh, it is not that easy. But yummy! 🤤\n")
     sleep(0.5)
@@ -28,8 +30,7 @@ def game_rules():
     Function to ask the player if he wants to read the game rules
     """
     while True:
-        print(
-            "Do you want to read the game {Style.BRIGHT}{Fore.Yellow}rules?(Y/N)")
+        print(f"Do you want to read the game {Style.BRIGHT}{Fore.YELLOW}rules?(Y/N)")
         answer = input().upper().strip()
         if answer == "Y":
             print(intro.RULES)
@@ -39,3 +40,15 @@ def game_rules():
             return False
         else:
             print("Invalid choice. Please enter 'Y' or 'N'.")
+
+
+def main():
+    """
+    Runs entire application 
+    """
+    run_intro()
+    game_rules()
+
+
+if __name__ == "__main__":
+    main()
