@@ -1,6 +1,7 @@
 # import section
 import random  # generates random numbers
 import string  # module for string (ascii, emojis) manipulation
+import sys
 from time import sleep  # time delay for print statements
 from words import words  # imports word list from word.py
 import intro
@@ -8,6 +9,8 @@ import colorama
 from colorama import Fore, Back, Style, init  # adds color to terminal text
 
 init(autoreset=True)  # sets text to its default values
+
+scoops = 5
 
 
 def choose_level(level):
@@ -69,18 +72,27 @@ def user_level():
 
 def select_words(words, level):
     """
-    Selects words by length into three lists
+    Selects words by length and gathers into three lists
     depending on user level choice
     """
     if level == "Easy":
         easy = [word for word in words if len(word) < 4]
         return easy
     elif level == "Medium":
-        Medium = [word for word in words if len(word) < 5]
-        return Medium
+        medium = [word for word in words if len(word) < 5]
+        return medium
     elif level == "Hard":
         hard = [word for word in words if len(word) < 6]
         return hard
+
+
+def get_valid_word(words):
+    """
+    Chooses randomly a word from the chosen words list
+    and returns it in uppercase
+    """
+    word = random.choice(words)
+    return word.upper()
 
 
 def game_rules():
@@ -106,15 +118,27 @@ def run_intro():
     Displays logo and welcoming message
     """
     print(f"{Style.BRIGHT}{Fore.RED}{intro.LOGO}")
-    print("Welcome!")
-    print(
-        f"Here you can get the Extra Large treat\nwith Six {Fore.LIGHTYELLOW_EX}Scoops of Ice Cream.\n")
-    print("🍦🍦🍦🍦🍦🍦\n")
+    typewriter("Welcome!")
     sleep(1)
-    print("Oh, it is not that easy. But yummy! 🤤\n")
+    typewriter(
+        f"Here you can get the Extra Large treat\nwith Six Scoops of Ice Cream.\n")
+    typewriter("🍦🍦🍦🍦🍦🍦\n")
+    sleep(1)
+    typewriter("Oh, it is not that easy. But yummy! 🤤\n")
     sleep(0.5)
-    print(
-        f"Here are the rules on how to get your {Style.BRIGHT}Extra Large treat!\n")
+    typewriter(
+        f"Here are the rules on how to get your Extra Large treat!\n")
+
+
+def typewriter(text, color=Fore.WHITE):
+    """
+    Function to add a typewriter effect to print statements.
+    """
+    for char in text:
+        sys.stdout.write(color + char + Style.RESET_ALL)
+        sys.stdout.flush()
+        sleep(.02)
+    print()
 
 
 def main():
@@ -125,7 +149,7 @@ def main():
     run_intro()
     game_rules()
     word_list = user_level()
-    
+
 
 if __name__ == "__main__":
     main()

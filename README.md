@@ -8,9 +8,9 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 ## Planning
 
-The following flowchart is created with [lucidchart](www.lucidchart.com). It visualizes the planning process for this application. Also, it was added in PDF editor.
+The following flowchart is created with [lucidchart](www.lucidchart.com). It visualizes the planning process for this application. Also, it was adited in PDF editor.
 
-![Flowchart](assets/images/six_scoops_flowchart.jpeg)
+![Flowchart](assets/images/flowchart-six-scoops.jpeg)
 
 ## Design
 
