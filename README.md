@@ -24,7 +24,7 @@ The following flowchart is created with [lucidchart](www.lucidchart.com). It vis
 
 + **Solved bugs**
 
-1. The ````word_completion``` string looked like one line. And when the guessed letters joined it, letters sticked to each other. The text readability was very poor. So the user may have a bad experience.
+1. The ```word_completion``` string looked like one line. And when the guessed letters joined it, letters sticked to each other. The text readability was very poor. So the user may have a bad experience.
 
   - *Solutions:* added spaces between each underscore character
 ## Testing

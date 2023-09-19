@@ -12,8 +12,7 @@ init(autoreset=True)  # sets text to its default values
 
 
 alphabet = set(string.ascii_uppercase)  # stores letters A-Z
-scoops = 5
-guessed_letters = []  # stores letters guessed by user
+scoops = 5  # number ice cream scoops that can be lost
 
 
 def choose_level(level):
@@ -23,7 +22,7 @@ def choose_level(level):
     if level == "1":
         print(
             f"{Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:",
-            f"{Style.RESET_ALL}Get your 🍦 easily cause it is 🔥.\n"
+            f"{Style.RESET_ALL}Get your  easily cause it is 🔥.\n"
         )
         return "easy"
     elif level == "2":
@@ -63,12 +62,12 @@ def user_level():
     while True:
         input_text = f"{Fore.GREEN}Choose your level:\n\n 1. Easy\n 2. Medium\n 3. Hard\n {Style.RESET_ALL}"
         chosen_level = input(input_text)
-        level = choose_level(chosen_level)
+        user_level = choose_level(chosen_level)
 
         if validate_level(chosen_level):
-            select_words(words, level)
+            select_words(words, user_level)
             break
-    word_list = select_words(words, level)
+    word_list = select_words(words, user_level)
 
     return word_list
 
@@ -78,18 +77,19 @@ def select_words(words, level):
     Selects words by length and gathers into three lists
     depending on user level choice
     """
-    if level == "Easy":
-        easy = [word for word in words if len(word) < 4]
+
+    if level == "easy":
+        easy = [word for word in words if len(word) == 3]
         return easy
-    elif level == "Medium":
-        medium = [word for word in words if len(word) < 5]
+    elif level == "medium":
+        medium = [word for word in words if len(word) == 4]
         return medium
-    elif level == "Hard":
-        hard = [word for word in words if len(word) < 6]
+    elif level == "hard":
+        hard = [word for word in words if len(word) == 5]
         return hard
 
 
-def get_word():
+def get_word(words):
     """
     Chooses randomly a word from the chosen words list
     and returns it in uppercase
@@ -114,17 +114,16 @@ def validate_letter(letter):
     return True
 
 
-def start_game(word):
+def start_game():
     """
     Runs and updates game development, provides 
     feedback to the user until the game is over.
     """
     # variables
-    underscored_word = "_ " * len(word)
-    word_completion = underscored_word[:-1]
+    word_completion = "_" * len(word)
     guessed = False
-    guessed_letters = []
-    guessed_words = []  # number ice cream scoops that can be lost
+    guessed_letters = []  # stores letters guessed by user
+    guessed_words = []
     print("Let's play!")
     # prints a number of scoops and displays the word to guess
     print(intro.display_scoops(scoops))
@@ -132,12 +131,14 @@ def start_game(word):
     print("\n")
     # a while loop to handle the users input
     while not guessed and scoops > 0:
+        print(
+            f"You've guessed these letters so far: "
+            f"{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
+        )
         guess = users_letter()
         # checks if a guessed letter has already been guessed or belongs to the word
         if len(guess) == 1 and guess.isalpha():
-            if guess in guessed_letters:
-                print("You have already guessed the letter", guess)
-            elif guess not in word:
+            if guess not in word:
                 scoops_number()
                 guessed_letters.append(guess)
             else:
@@ -163,7 +164,7 @@ def start_game(word):
                 guessed: True
                 word_completion = word
         else:
-            print("It is not a valid guess.")
+            print(f"{Fore.RED}It is not a valid guess.")
         print(intro.display_scoops(scoops))
         print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
         print("\n")
@@ -171,8 +172,8 @@ def start_game(word):
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
-        print("Sorry, you have only a cone left 😢 the word was " +
-              word + ". Maybe next time!")
+        print(f"Sorry, you have only a cone left 😢 The word was " +
+              word + " Maybe next time!")
 
 
 def users_letter():
@@ -190,8 +191,6 @@ def scoops_number():
     """
     Decrements scoops for each wrong guess
     """
-    global guess
-    global guessed_letters
     global scoops
     scoops -= 1
     print(
@@ -213,7 +212,7 @@ def game_rules():
             print("Let's get started!\n")
             return False
         else:
-            print("Invalid choice. Please enter 'Y' or 'N'.")
+            print(f"{Fore.RED}Invalid choice. Please enter 'Y' or 'N'.")
 
 
 def run_intro():
@@ -244,14 +243,34 @@ def typewriter(text, color=Fore.WHITE):
     print()
 
 
+def restart_game():
+    """
+    Asks player whether he wants to play again or quit this game.
+    """
+    while True:
+        print(f"Do you want to play {Style.BRIGHT}{Fore.YELLOW}again?(Y/N)")
+        choice = input().upper().strip()
+        if choice == "Y":
+            main()
+            return True
+        elif choice == "N":
+            print("Bye! Hope, you did like the ice scream 🍦!")
+            return False
+        else:
+            print("{Fore.RED}Invalid choice. Please enter 'Y' or 'N'.")
+
+
 def main():
     """
     Runs entire application 
     """
-    global word_list
+    global word_list, word, level
+    run_intro()
+    game_rules()
     word_list = user_level()
-    word = get_word()
-    start_game(word)
+    word = get_word(word_list)
+    start_game()
+    restart_game()
 
 
 if __name__ == "__main__":
