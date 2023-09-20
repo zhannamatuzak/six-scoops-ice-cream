@@ -13,26 +13,26 @@ init(autoreset=True)  # sets text to its default values
 
 
 alphabet = set(string.ascii_uppercase)  # stores letters A-Z
-scoops = 5  # number ice cream scoops that can be lost
+scoops = 6  # number ice cream scoops that can be lost
 
 
 def choose_level(level):
     """ Chooses level based on user input """
     if level == "1":
         print(f"{Fore.LIGHTBLUE_EX}Easy:{Fore.RESET} Get " +
-            "your 🍦 easily cause it is 🔥."
+            "your 🍦 easily cause it is 🔥.\n"
         )
         return "easy"
     elif level == "2":
         print(
             f"{Fore.LIGHTYELLOW_EX}Medium:{Fore.RESET} Get " +
-            "your 🍦 smartly cause it is 🔥."
+            "your 🍦 smartly cause it is 🔥.\n"
         )
         return "medium"
     elif level == "3":
         print(
             f"{Fore.LIGHTRED_EX}Hard:{Fore.RESET} Strain " +
-            "your brain to get 🍦 cause it is 🔥."
+            "your brain to get 🍦 cause it is 🔥.\n"
         )
         return "hard"
     elif level == "4":
@@ -111,7 +111,7 @@ def validate_letter(letter):
         if letter not in alphabet:
             raise ValueError(
                 f"Please enter a single letter from A to Z. "
-                f"You typed {Fore.YELLOW}{letter}{Style.RESET_ALL}"
+                f"You typed {Style.BRIGHT}{Fore.YELLOW}{letter}"
             )
     except ValueError as e:
         print(f"{Fore.RED}Invalid data:{Fore.RESET} {e}.\n")
@@ -132,7 +132,7 @@ def start_game():
     # prints a number of scoops and displays the word to guess
     print("Let's play!")
     print(display_scoops(scoops))
-    print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
+    print(f"\n{Fore.LIGHTBLUE_EX}{word_completion}")
     # handles the users input
     while not guessed and scoops > 0:
         print(
@@ -174,8 +174,11 @@ def start_game():
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
-        print(f"Sorry, you have only a cone left 😢 The word was " +
-            word + " Game is over!")
+        print(
+            f"Sorry, you have only one scope of 🍦 left 😢." 
+            f" Still good!"
+        )
+        print(f"The word was ➡️ " + word + " Game is over!")
 
 
 def users_letter():
@@ -197,7 +200,7 @@ def scoops_number():
     print(
         f"Wrong letter!"
         f"You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL}"
-        f"scoops of 🍦 left."
+        f" scoops of 🍦 left."
         )
 
 
@@ -245,14 +248,17 @@ def run_intro():
     typewriter("Welcome!")
     sleep(1)
     typewriter(
-        f"Here you can get the Extra Large treat " +
-        "with Six Scoops of Ice Cream.")
+        f"Here you can get the Extra Large treat "
+        f"with Six Scoops of Ice Cream.\n"
+    )
     typewriter("🍦🍦🍦🍦🍦🍦")
     sleep(1)
     typewriter("Oh, it is not that easy. But yummy! 🤤")
     sleep(0.5)
     typewriter(
-        f"Here are the rules on how to get your Extra Large treat!")
+        f"Here are the rules on how to get your "
+        f"Extra Large treat!\n"
+    )
 
 
 def typewriter(text, color=Fore.WHITE):

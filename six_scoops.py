@@ -1,6 +1,7 @@
 def display_scoops(scoops):
     stages = [
             """ 
+              ( )
             ________
             \      /
              \    /
