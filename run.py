@@ -19,32 +19,28 @@ scoops = 5  # number ice cream scoops that can be lost
 def choose_level(level):
     """ Chooses level based on user input """
     if level == "1":
-        print(
-            f"""
-            {Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:",
-            
-            {Style.RESET_ALL}Get your  easily cause it is 🔥.
-            """
+        print(f"""
+            {Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:"{Style.RESET_ALL}
+            Get your  easily cause it is 🔥.
+        """
         )
         return "easy"
     elif level == "2":
         print(
             f"""
-            {Fore.LIGHTYELLOW_EX}Medium:",
-
+            {Fore.LIGHTYELLOW_EX}Medium:"
             {Style.RESET_ALL}Get your 🍦 smartly cause it is 🔥.
 
-            """
+        """
         )
         return "medium"
     elif level == "3":
         print(
             f"""
-            {Fore.LIGHTRED_EX}Hard:",
-            
-            f"{Style.RESET_ALL}Strain your brain to get 🍦 cause it is 🔥.
+            {Fore.LIGHTRED_EX}Hard:"{Style.RESET_ALL}
+            Strain your brain to get 🍦 cause it is 🔥.
 
-            """
+        """
         )
         return "hard"
     elif level == "4":
@@ -54,24 +50,24 @@ def choose_level(level):
 
 def validate_level(value):
     """
-    Checks if user input for level choice equals 1, 2 or 3
+    Checks if user input for level choice equals
+    1, 2, 3 or 4 for back
     """
     try:
-        if (value != "1") and (value != "2") and (value != "3"):
+        if (value != "1") and (value != "2") and (value != "3" and (value != "4")):
             raise ValueError(
-                f"Please only enter 1, 2 or 3. You typed "
+                f"Please only enter 1, 2, 3 or 4. You typed "
                 f"{Style.BRIGHT}{Fore.YELLOW}{value}{Style.RESET_ALL}"
             )
     except ValueError as e:
-        print(f"{Fore.RED}Invalid data:{Style.RESET_ALL} {e}, please try again")
+        print(f"{Fore.RED}Invalid data:{Style.RESET_ALL} {e}," +
+            "please try again")
         return False
     return True
 
 
 def user_level():
-    """
-    Gets user level value and generates word list accordingly
-    """
+    """ Gets user level value and generates word list accordingly """
     while True:
         input_text = f"""
         {Fore.GREEN}Choose your level by typing 1, 2, 3 or 4 to go back:
@@ -119,14 +115,12 @@ def get_word(words):
 
 
 def validate_letter(letter):
-    """
-    Validates user input if letter is in alphabet
-    """
+    """ Validates user input if letter is in alphabet """
     try:
         if letter not in alphabet:
             raise ValueError(
-                f"Please enter a single letter from A to Z. "
-                f"You typed {Fore.YELLOW}{letter}{Style.RESET_ALL}"
+                f"Please enter a single letter from A to Z. " +
+                "You typed {Fore.YELLOW}{letter}{Style.RESET_ALL}"
             )
     except ValueError as e:
         print(f"{Fore.RED}Invalid data: {e}{Fore.RESET}.\n")
@@ -144,16 +138,19 @@ def start_game():
     guessed = False
     guessed_letters = []  # stores letters guessed by user
     guessed_words = []
-    print("Let's play!")
     # prints a number of scoops and displays the word to guess
-    print(display_scoops(scoops))
-    print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
-    print("\n")
-    # a while loop to handle the users input
+    print(
+        f"""
+        Let's play!
+        {display_scoops(scoops)}
+        {Fore.LIGHTBLUE_EX}{word_completion}
+        """
+    )
+    # handles the users input
     while not guessed and scoops > 0:
         print(
-            f"You've guessed these letters so far: "
-            f"{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
+            f"You've guessed these letters so far: " +
+            "{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
         )
         guess = users_letter()
         # checks if a guessed letter has already been guessed or belongs to the word
@@ -184,20 +181,24 @@ def start_game():
                 word_completion = word
         else:
             print(f"{Fore.RED}It is not a valid guess.")
-        print(display_scoops(scoops))
-        print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
-        print("\n")
+        print(
+            f"""
+            {display_scoops(scoops)}
+            {Fore.LIGHTBLUE_EX}{word_completion}
+            """
+        )
     # shows the end of the game: user wins or loses
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
-        print(f"Sorry, you have only a cone left 😢 The word was ☆ " +
-              word + " ☆ Maybe next time!")
+        print(f"Sorry, you have only a cone left 😢 The word was " +
+            word + " Game is over!")
 
 
 def users_letter():
-    """
-    Asks a user to type a letter and checks if it is in the word
+    """ 
+    Asks a user to type a letter and checks
+    if it is in the word
     """
     while True:
         guess = input("Please guess a letter:\n").upper()
@@ -207,82 +208,106 @@ def users_letter():
 
 
 def scoops_number():
-    """
-    Decrements scoops for each wrong guess
-    """
+    """ Decrements scoops for each wrong guess """
     global scoops
     scoops -= 1
-    print(
-        f"Wrong letter! You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL} scoops of 🍦 left.\n")
+    print(f"""Wrong letter!
+        You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL}
+        scoops of 🍦 left.
+
+    """
+        )
 
 
 def game_rules():
-    """
-    Function to ask the player if he wants to read the game rules
+    """ 
+    Function to ask the player if he wants
+    to read the game rules 
     """
     while True:
         print(
-            f"Do you want to read the game {Style.BRIGHT}{Fore.YELLOW}rules?(Y/N)")
+            f"Do you want to read the game" 
+            f"{Style.BRIGHT}{Fore.YELLOW}rules? (Y/N)"
+        )
         answer = input().upper().strip()
         if answer == "Y":
-            print(RULES)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(RULES_PART_1)
+            sleep(1)
+            print(RULES_PART_2)
+            sleep(1)
+            print(RULES_PART_3)
+            sleep(1)
+            print(RULES_PART_4)
+            sleep(1)
+            print(RULES_PART_5)
+            sleep(1)
+            print(RULES_PART_6)
+            sleep(1)
             return True
         elif answer == "N":
+            # Clears the terminal
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Let's get started!\n")
             return False
         else:
-            print(f"{Fore.RED}Invalid choice. Please enter 'Y' or 'N'.")
+            print(
+                f"{Fore.RED}Invalid choice:{Style.RESET_ALL}"
+                f"please enter 'Y' or 'N'."
+            )
 
 
 def run_intro():
-    """
-    Displays logo and welcoming message
-    """
+    """ Displays logo and welcoming message """
     print(f"{Style.BRIGHT}{Fore.RED}{LOGO}")
     typewriter("Welcome!")
     sleep(1)
     typewriter(
-        f"Here you can get the Extra Large treat\nwith Six Scoops of Ice Cream.\n")
-    typewriter("🍦🍦🍦🍦🍦🍦\n")
+        f"Here you can get the Extra Large treat" +
+        "with Six Scoops of Ice Cream.")
+    typewriter("🍦🍦🍦🍦🍦🍦")
     sleep(1)
-    typewriter("Oh, it is not that easy. But yummy! 🤤\n")
+    typewriter("Oh, it is not that easy. But yummy! 🤤")
     sleep(0.5)
     typewriter(
-        f"Here are the rules on how to get your Extra Large treat!\n")
+        f"Here are the rules on how to get your Extra Large treat!")
 
 
 def typewriter(text, color=Fore.WHITE):
-    """
-    Function to add a typewriter effect to print statements.
-    """
+    """ Function to add a typewriter effect to print statements """
     for char in text:
         sys.stdout.write(color + char + Style.RESET_ALL)
         sys.stdout.flush()
         sleep(.02)
+    print()
 
 
 def restart_game():
-    """
-    Asks player whether he wants to play again or quit this game.
-    """
+    """ Asks player if he wants to play again """
     while True:
-        print(f"Do you want to play {Style.BRIGHT}{Fore.YELLOW}again?(Y/N)")
+        print(
+            f"Do you want to play"
+            f"{Style.BRIGHT}{Fore.YELLOW}again? (Y/N)"
+        )
         choice = input().upper().strip()
         if choice == "Y":
             main()
             return True
         elif choice == "N":
-            print("Bye! Hope, you did like the ice scream 🍦!")
+            print("Bye! Hope, you did like the 🍦 game!")
             return False
         else:
-            print(f"{Fore.RED}Invalid choice:{Style.RESET_ALL} please enter 'Y' or 'N'.")
+            print(
+                f"{Fore.RED}Invalid choice:{Style.RESET_ALL}" 
+                f"please enter 'Y' or 'N'."
+            )
 
 
 def main():
-    """
-    Runs entire application 
-    """
+    """ Runs entire application """
     global word_list, word
+    # Clears the terminal
+    os.system('cls' if os.name == 'nt' else 'clear')
     run_intro()
     game_rules()
     word_list = user_level()
