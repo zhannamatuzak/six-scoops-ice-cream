@@ -5,8 +5,7 @@ import sys
 from time import sleep  # time delay for print statements
 from words import words  # imports word list from word.py
 import intro
-import colorama
-from colorama import Fore, Back, Style, init  # adds color to terminal text
+from colorama import Fore, Style, init  # adds color to terminal text
 
 init(autoreset=True)  # sets text to its default values
 
@@ -173,7 +172,7 @@ def start_game():
         print("Congrats, you guessed the word! You win!")
     else:
         print(f"Sorry, you have only a cone left 😢 The word was ☆ " +
-            word + " ☆ Maybe next time!")
+              word + " ☆ Maybe next time!")
 
 
 def users_letter():

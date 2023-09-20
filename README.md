@@ -31,6 +31,9 @@ The following flowchart is created with [lucidchart](www.lucidchart.com). It vis
 
 ## Deployment
 
+This project was deployed with Heroku.
+
+
 ## Credits
 
 ## Acknowledgements
