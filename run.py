@@ -3,9 +3,11 @@ import random  # generates random numbers
 import string  # module for string (ascii, emojis) manipulation
 import sys
 from time import sleep  # time delay for print statements
-from words import words  # imports word list from word.py
-import intro
-from colorama import Fore, Style, init  # adds color to terminal text
+import os
+from words import *
+from intro import *
+from six_scoops import *
+from colorama import Fore, Style, init
 
 init(autoreset=True)  # sets text to its default values
 
@@ -15,27 +17,39 @@ scoops = 5  # number ice cream scoops that can be lost
 
 
 def choose_level(level):
-    """
-    Chooses level based on user input
-    """
+    """ Chooses level based on user input """
     if level == "1":
         print(
-            f"{Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:",
-            f"{Style.RESET_ALL}Get your  easily cause it is 🔥.\n"
+            f"""
+            {Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:",
+            
+            {Style.RESET_ALL}Get your  easily cause it is 🔥.
+            """
         )
         return "easy"
     elif level == "2":
         print(
-            f"{Fore.LIGHTYELLOW_EX}Medium:",
-            f"{Style.RESET_ALL}Get your 🍦 smartly cause it is 🔥.\n"
+            f"""
+            {Fore.LIGHTYELLOW_EX}Medium:",
+
+            {Style.RESET_ALL}Get your 🍦 smartly cause it is 🔥.
+
+            """
         )
         return "medium"
     elif level == "3":
         print(
-            f"{Fore.LIGHTRED_EX}Hard:",
-            f"{Style.RESET_ALL}Strain your brain to get 🍦 cause it is 🔥.\n"
+            f"""
+            {Fore.LIGHTRED_EX}Hard:",
+            
+            f"{Style.RESET_ALL}Strain your brain to get 🍦 cause it is 🔥.
+
+            """
         )
         return "hard"
+    elif level == "4":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        main()
 
 
 def validate_level(value):
@@ -49,7 +63,7 @@ def validate_level(value):
                 f"{Style.BRIGHT}{Fore.YELLOW}{value}{Style.RESET_ALL}"
             )
     except ValueError as e:
-        print(f"{Fore.RED}Invalid data: {e}, please try again\n")
+        print(f"{Fore.RED}Invalid data:{Style.RESET_ALL} {e}, please try again")
         return False
     return True
 
@@ -59,15 +73,22 @@ def user_level():
     Gets user level value and generates word list accordingly
     """
     while True:
-        input_text = f"{Fore.GREEN}Choose your level:\n\n 1. Easy\n 2. Medium\n 3. Hard\n {Style.RESET_ALL}"
+        input_text = f"""
+        {Fore.GREEN}Choose your level by typing 1, 2, 3 or 4 to go back:
+
+        1. Easy
+        2. Medium
+        3. Hard
+        4. Back
+        {Style.RESET_ALL}
+        """
         chosen_level = input(input_text)
-        user_level = choose_level(chosen_level)
+        level = choose_level(chosen_level)
 
         if validate_level(chosen_level):
-            select_words(words, user_level)
+            select_words(words, level)
             break
-    word_list = select_words(words, user_level)
-
+    word_list = select_words(words, level)
     return word_list
 
 
@@ -125,7 +146,7 @@ def start_game():
     guessed_words = []
     print("Let's play!")
     # prints a number of scoops and displays the word to guess
-    print(intro.display_scoops(scoops))
+    print(display_scoops(scoops))
     print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
     print("\n")
     # a while loop to handle the users input
@@ -151,7 +172,6 @@ def start_game():
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
-        #
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print("You have already guessed the word", guess)
@@ -164,7 +184,7 @@ def start_game():
                 word_completion = word
         else:
             print(f"{Fore.RED}It is not a valid guess.")
-        print(intro.display_scoops(scoops))
+        print(display_scoops(scoops))
         print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
         print("\n")
     # shows the end of the game: user wins or loses
@@ -205,7 +225,7 @@ def game_rules():
             f"Do you want to read the game {Style.BRIGHT}{Fore.YELLOW}rules?(Y/N)")
         answer = input().upper().strip()
         if answer == "Y":
-            print(intro.RULES)
+            print(RULES)
             return True
         elif answer == "N":
             print("Let's get started!\n")
@@ -218,7 +238,7 @@ def run_intro():
     """
     Displays logo and welcoming message
     """
-    print(f"{Style.BRIGHT}{Fore.RED}{intro.LOGO}")
+    print(f"{Style.BRIGHT}{Fore.RED}{LOGO}")
     typewriter("Welcome!")
     sleep(1)
     typewriter(
@@ -239,7 +259,6 @@ def typewriter(text, color=Fore.WHITE):
         sys.stdout.write(color + char + Style.RESET_ALL)
         sys.stdout.flush()
         sleep(.02)
-    print()
 
 
 def restart_game():
@@ -256,14 +275,14 @@ def restart_game():
             print("Bye! Hope, you did like the ice scream 🍦!")
             return False
         else:
-            print("{Fore.RED}Invalid choice. Please enter 'Y' or 'N'.")
+            print(f"{Fore.RED}Invalid choice:{Style.RESET_ALL} please enter 'Y' or 'N'.")
 
 
 def main():
     """
     Runs entire application 
     """
-    global word_list, word, level
+    global word_list, word
     run_intro()
     game_rules()
     word_list = user_level()
