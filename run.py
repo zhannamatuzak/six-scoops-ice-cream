@@ -13,7 +13,7 @@ init(autoreset=True)  # sets text to its default values
 
 
 alphabet = set(string.ascii_uppercase)  # stores letters A-Z
-scoops = 5  # number ice cream scoops that can be lost
+scoops = 6  # number ice cream scoops that can be lost
 
 
 def choose_level(level):
@@ -69,6 +69,7 @@ def user_level():
         3. Hard
         4. Back
         {Fore.RESET}
+
         """
         chosen_level = input(input_text)
         level = choose_level(chosen_level)
@@ -133,7 +134,12 @@ def start_game():
     # prints a number of scoops and displays the word to guess
     print("Let's play!")
     print(display_scoops(scoops))
-    print(f"\n{Fore.LIGHTBLUE_EX}{word_completion}")
+    print(
+        f"""
+        {Fore.LIGHTBLUE_EX}{word_completion}
+        
+        """
+    )
     # handles the users input
     while not guessed and scoops > 0:
         print(
@@ -170,16 +176,21 @@ def start_game():
         else:
             print(f"{Fore.RED}It is not a valid guess.")
         print(display_scoops(scoops))
-        print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
+        print(
+            f"""
+            {Fore.LIGHTBLUE_EX}{word_completion}
+
+            """
+        )
     # shows the end of the game: user wins or loses
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
         print(
-            f"Sorry, you have only one scope of 🍦 left 😢." 
-            f" Still good!"
+            f"Sorry, your cane is empty 😢." 
+            f" Game is over!"
         )
-        print(f"The word was ➡️ " + word + " Game is over!")
+        print(f"The word was ➡️  " + word + ".")
 
 
 def users_letter():

@@ -1,5 +1,13 @@
+# choses ice scream ilustration
 def display_scoops(scoops):
     stages = [
+          """ 
+            ________
+            \      /
+             \    /
+              \  /
+               \/
+               """,
             """ 
               ( )
             ________
