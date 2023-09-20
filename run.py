@@ -19,28 +19,20 @@ scoops = 5  # number ice cream scoops that can be lost
 def choose_level(level):
     """ Chooses level based on user input """
     if level == "1":
-        print(f"""
-            {Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:{Style.RESET_ALL}
-            Get your  easily cause it is 🔥.
-        """
+        print(f"{Fore.LIGHTBLUE_EX}Easy:{Fore.RESET} Get " +
+            "your 🍦 easily cause it is 🔥."
         )
         return "easy"
     elif level == "2":
         print(
-            f"""
-            {Fore.LIGHTYELLOW_EX}Medium:
-            {Style.RESET_ALL}Get your 🍦 smartly cause it is 🔥.
-
-        """
+            f"{Fore.LIGHTYELLOW_EX}Medium:{Fore.RESET} Get " +
+            "your 🍦 smartly cause it is 🔥."
         )
         return "medium"
     elif level == "3":
         print(
-            f"""
-            {Fore.LIGHTRED_EX}Hard:{Style.RESET_ALL}
-            Strain your brain to get 🍦 cause it is 🔥.
-
-        """
+            f"{Fore.LIGHTRED_EX}Hard:{Fore.RESET} Strain " +
+            "your brain to get 🍦 cause it is 🔥."
         )
         return "hard"
     elif level == "4":
@@ -57,11 +49,11 @@ def validate_level(value):
         if (value != "1") and (value != "2") and (value != "3" and (value != "4")):
             raise ValueError(
                 f"Please only enter 1, 2, 3 or 4. You typed "
-                f"{Style.BRIGHT}{Fore.YELLOW}{value}{Style.RESET_ALL}"
+                f"{Style.BRIGHT}{Fore.YELLOW}{value}"
             )
     except ValueError as e:
-        print(f"{Fore.RED}Invalid data:{Style.RESET_ALL} {e}," +
-            "please try again")
+        print(f"{Fore.RED}Invalid data:{Fore.RESET} {e}," +
+            " please try again")
         return False
     return True
 
@@ -76,7 +68,6 @@ def user_level():
         2. Medium
         3. Hard
         4. Back
-        {Style.RESET_ALL}
         """
         chosen_level = input(input_text)
         level = choose_level(chosen_level)
@@ -119,11 +110,11 @@ def validate_letter(letter):
     try:
         if letter not in alphabet:
             raise ValueError(
-                f"Please enter a single letter from A to Z. " +
-                "You typed {Fore.YELLOW}{letter}{Style.RESET_ALL}"
+                f"Please enter a single letter from A to Z. "
+                f"You typed {Fore.YELLOW}{letter}{Style.RESET_ALL}"
             )
     except ValueError as e:
-        print(f"{Fore.RED}Invalid data: {e}{Fore.RESET}.\n")
+        print(f"{Fore.RED}Invalid data:{Fore.RESET} {e}.\n")
         return False
     return True
 
@@ -139,18 +130,14 @@ def start_game():
     guessed_letters = []  # stores letters guessed by user
     guessed_words = []
     # prints a number of scoops and displays the word to guess
-    print(
-        f"""
-        Let's play!
-        {display_scoops(scoops)}
-        {Fore.LIGHTBLUE_EX}{word_completion}
-        """
-    )
+    print("Let's play!")
+    print(display_scoops(scoops))
+    print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
     # handles the users input
     while not guessed and scoops > 0:
         print(
-            f"You've guessed these letters so far: " +
-            "{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
+            f"You've guessed these letters so far: "
+            f"{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
         )
         guess = users_letter()
         # checks if a guessed letter has already been guessed or belongs to the word
@@ -181,12 +168,8 @@ def start_game():
                 word_completion = word
         else:
             print(f"{Fore.RED}It is not a valid guess.")
-        print(
-            f"""
-            {display_scoops(scoops)}
-            {Fore.LIGHTBLUE_EX}{word_completion}
-            """
-        )
+        print(display_scoops(scoops))
+        print(f"{Fore.LIGHTBLUE_EX}{word_completion}")
     # shows the end of the game: user wins or loses
     if guessed:
         print("Congrats, you guessed the word! You win!")
@@ -211,11 +194,10 @@ def scoops_number():
     """ Decrements scoops for each wrong guess """
     global scoops
     scoops -= 1
-    print(f"""Wrong letter!
-        You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL}
-        scoops of 🍦 left.
-
-    """
+    print(
+        f"Wrong letter!"
+        f"You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL}"
+        f"scoops of 🍦 left."
         )
 
 
@@ -237,9 +219,9 @@ def game_rules():
             print(RULES_PART_2)
             sleep(1)
             print(RULES_PART_3)
-            sleep(1)
+            sleep(2)
             print(RULES_PART_4)
-            sleep(1)
+            sleep(2)
             print(RULES_PART_5)
             sleep(1)
             print(RULES_PART_6)
@@ -263,7 +245,7 @@ def run_intro():
     typewriter("Welcome!")
     sleep(1)
     typewriter(
-        f"Here you can get the Extra Large treat" +
+        f"Here you can get the Extra Large treat " +
         "with Six Scoops of Ice Cream.")
     typewriter("🍦🍦🍦🍦🍦🍦")
     sleep(1)
@@ -279,14 +261,13 @@ def typewriter(text, color=Fore.WHITE):
         sys.stdout.write(color + char + Style.RESET_ALL)
         sys.stdout.flush()
         sleep(.02)
-    print()
 
 
 def restart_game():
     """ Asks player if he wants to play again """
     while True:
         print(
-            f"Do you want to play"
+            f"Do you want to play "
             f"{Style.BRIGHT}{Fore.YELLOW}again? (Y/N)"
         )
         choice = input().upper().strip()
@@ -299,7 +280,7 @@ def restart_game():
         else:
             print(
                 f"{Fore.RED}Invalid choice:{Style.RESET_ALL}" 
-                f"please enter 'Y' or 'N'."
+                f" please enter 'Y' or 'N'."
             )
 
 
