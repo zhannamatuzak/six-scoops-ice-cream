@@ -172,8 +172,8 @@ def start_game():
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
-        print(f"Sorry, you have only a cone left 😢 The word was " +
-              word + " Maybe next time!")
+        print(f"Sorry, you have only a cone left 😢 The word was ☆ " +
+            word + " ☆ Maybe next time!")
 
 
 def users_letter():
