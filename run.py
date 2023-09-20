@@ -20,7 +20,7 @@ def choose_level(level):
     """ Chooses level based on user input """
     if level == "1":
         print(f"""
-            {Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:"{Style.RESET_ALL}
+            {Style.NORMAL}{Fore.LIGHTBLUE_EX}Easy:{Style.RESET_ALL}
             Get your  easily cause it is 🔥.
         """
         )
@@ -28,7 +28,7 @@ def choose_level(level):
     elif level == "2":
         print(
             f"""
-            {Fore.LIGHTYELLOW_EX}Medium:"
+            {Fore.LIGHTYELLOW_EX}Medium:
             {Style.RESET_ALL}Get your 🍦 smartly cause it is 🔥.
 
         """
@@ -37,7 +37,7 @@ def choose_level(level):
     elif level == "3":
         print(
             f"""
-            {Fore.LIGHTRED_EX}Hard:"{Style.RESET_ALL}
+            {Fore.LIGHTRED_EX}Hard:{Style.RESET_ALL}
             Strain your brain to get 🍦 cause it is 🔥.
 
         """
@@ -226,7 +226,7 @@ def game_rules():
     """
     while True:
         print(
-            f"Do you want to read the game" 
+            f"Do you want to read the game " 
             f"{Style.BRIGHT}{Fore.YELLOW}rules? (Y/N)"
         )
         answer = input().upper().strip()

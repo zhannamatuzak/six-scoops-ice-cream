@@ -14,32 +14,39 @@ LOGO = """
  |_____/ |_____|/_/ \_\ |_____/  \_____|\____/  \____/ |_|     |_____/
  """
 
-RULES = """
+RULES_PART_1 = """
 =========
-📜 RULES
+📜  RULES
 =========
-
+"""
+RULES_PART_2 = """
 ✅ Select your skill level. 
 
 ✅ The word you have to guess will get longer 
 as your skill level increases.
-
+"""
+RULES_PART_3 = """
 ✅ Levels
 Easy Level: Short words (3 letters) for beginners. 
 Medium Level: 4-letter words for those seeking a challenge.
 Hard Level: 5-letter challenging words for experts.
-
+"""
+RULES_PART_4 = """
 ✅ Then try and guess the word one letter at a time 
 before you lose all six scoops of ice cream.
 
 ✅ Here is a hint.
 All words are related to summer.
+"""
+RULES_PART_5 = """
 
 ✅ You will start off with 6 scoops of ice cream. 
 
 ✅ For each wrong guess you lose one scoop.
 And you can play until your cane is empty.
 Do not lose! 😢 beacuse it is 🔥 outside.
+"""
+RULES_PART_6 = """
 
 Cheer up! You can try again 😉, 
 simply restart the game.
