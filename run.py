@@ -13,7 +13,7 @@ init(autoreset=True)  # sets text to its default values
 
 
 alphabet = set(string.ascii_uppercase)  # stores letters A-Z
-scoops = 6  # number ice cream scoops that can be lost
+scoops = 5  # number ice cream scoops that can be lost
 
 
 def choose_level(level):
@@ -68,6 +68,7 @@ def user_level():
         2. Medium
         3. Hard
         4. Back
+        {Fore.RESET}
         """
         chosen_level = input(input_text)
         level = choose_level(chosen_level)
@@ -267,6 +268,7 @@ def typewriter(text, color=Fore.WHITE):
         sys.stdout.write(color + char + Style.RESET_ALL)
         sys.stdout.flush()
         sleep(.02)
+    print()
 
 
 def restart_game():

@@ -20,9 +20,9 @@ RULES_PART_1 = """
 =========
 """
 RULES_PART_2 = """
-✅ Select your skill level. 
+✅  Select your skill level. 
 
-✅ The word you have to guess will get longer 
+✅  The word you have to guess will get longer 
 as your skill level increases.
 """
 RULES_PART_3 = """
@@ -35,7 +35,7 @@ RULES_PART_4 = """
 ✅  Then try and guess the word one letter at a time 
 before you lose all six scoops of ice cream.
 
-✅ Here is a hint.
+✅  Here is a hint.
 All words are related to summer.
 """
 RULES_PART_5 = """
@@ -44,7 +44,7 @@ RULES_PART_5 = """
 ✅  For each wrong guess you lose one scoop.
 And you can play until there is one scope of 🍦 left.
 If you lose, you will still get 🍦.
-Do not lose! 😢 beacuse it is 🔥 outside.
+Do not lose, beacuse it is 🔥 outside.
 """
 RULES_PART_6 = """
 Cheer up! You can try again 😉, 
