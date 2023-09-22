@@ -51,11 +51,11 @@ def validate_level(value):
         and (value != "4")):
             raise ValueError(
                 f"Please only enter 1, 2, 3 or 4. You typed "
-                f"{Style.BRIGHT}{Fore.YELLOW}{value}"
+                f"{Fore.YELLOW}{value}{Fore.RESET}"
             )
     except ValueError as e:
         print(f"{Fore.RED}Invalid data:{Fore.RESET} {e}," +
-            " please try again")
+            " please try again.")
         return False
     return True
 

@@ -68,15 +68,24 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ### Existing Features
 
-#Logo#
+##Logo##
 
  - Displays game title using ASCII
 
  ![Logo image](assets/images/logo.png)
 
-#Introduction#
- ![Inro image](assets/images/introduction.png)
- 
+##Introduction##
+
+ - Displays an introduction word to the user and asks whether he wants to read the rules or not.
+
+ ![Inro image](assets/images/intro-word.png)
+
+ ##Rules##
+
+ - Displays the user the rules in several parts with time delays after clearing the terminal.
+ ![Inro image](assets/images/rules-image.png)
+
+
 
 ### Possible Future Features
 
