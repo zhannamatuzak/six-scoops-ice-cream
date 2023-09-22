@@ -66,7 +66,18 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ## Features
 
+
+
+### Possible Future Features
+
+ - The ```word_completion``` string looks like one line. And when the guessed letters joined it, letters sticked to each other. 
+ To improve the text readability for kids, spaces between each underscore character can be added. 
+
+ ---
+
 ## Technologies Used
+
+---
 
 ## Testing
 
@@ -78,24 +89,28 @@ The program was tested constantly during its development process.
 
  - PEP8 CI Python Validator
 
- #run.py#
+ - run.py
     - Error: On line 13 the code line contains whitespace
     - Solution: The whitespace is used for the design purpose and is not deleted intentionally.
+
  ![file run.py testing](assets/images/run-validate.png)
 
-#intro.py"#
+ - intro.py
     - Error 1: From line 9 to 14 found invalid escape sequences and whitespaces.
     - Solution: It can not be fix because it is a graphic ilustration.
     - Error 2: On lines 23, 25, 37, 45, and 53 are whitespaces.
     - Solution: I do not find them if I click to detect it. I suppose it is due to emojis usage.
+
  ![file intro.py testing](assets/images/intro-validate.png) 
 
- #six_scoops.py#
+ - six_scoops.py
    - Error: Whitespaces and escape sequences are found. 
    - Solution: It caccot be solved because the file contains graphic illustrations.
+
  ![file sic_scoops.py testing](assets/images/six-scoops-validate.png)  
 
 ### Testing User Stories (Functionality)
+
 
 | Expectation (As a user, I want to...)  | Result (As a user, I...)    |
 | :---------------------------------: | :------------------------------:|
@@ -116,14 +131,27 @@ The program was tested constantly during its development process.
 | be able to play the game again after it is finished | can choose yes or no options |
 | be able to restart the game or not when after it's finished | can choose between a Y/N option to restart the game after finishing |
 
+---
+
 ## Bugs
 
 + **Solved bugs**
 
-1. The ```word_completion``` string looked like one line. And when the guessed letters joined it, letters sticked to each other. The text readability was very poor. So the user may have a bad experience.
+1. The ```scoops``` variable was not mention as global in function.
 
-  - *Solutions:* added spaces between each underscore character
+  - *Solutions:* declare variable as global inside the function.
 
+```
+def scoops_number():
+    """ Decrements scoops for each wrong guess """
+    global scoops
+    scoops -= 1
+    print(
+        f"❌ Wrong letter! "
+        f"You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL}"
+        f" scoops of 🍦 left."
+        )
+```
 
 ---
 

@@ -20,7 +20,7 @@ def choose_level(level):
     """ Chooses level based on user input """
     if level == "1":
         print(
-            f"{Fore.LIGHTBLUE_EX}Easy:{Fore.RESET}" +
+            f"{Fore.LIGHTBLUE_EX}Easy:{Fore.RESET} " +
             "Get your 🍦 easily cause it is 🔥.\n"
         )
         return "easy"
@@ -144,7 +144,6 @@ def start_game():
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []  # stores letters guessed by user
-    guessed_words = []
     print("Let's play!")
     # prints a scoops numberand displays the word to guess
     print(display_scoops(scoops))
