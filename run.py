@@ -107,6 +107,18 @@ def get_word(words):
     return word.upper()
 
 
+def users_letter():
+    """
+    Asks a user to type a letter and checks
+    if it is in the word
+    """
+    while True:
+        guess = input("Please guess a letter:\n").upper()
+        if validate_letter(guess):
+            break
+    return guess
+
+
 def validate_letter(letter):
     """ Validates user input if letter is in alphabet """
     try:
@@ -130,10 +142,9 @@ def start_game():
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []  # stores letters guessed by user
-    guessed_words = []
-    # prints a number of scoops and displays the word to guess
+    guessed_words = [] 
     print("Let's play!")
-    print(display_scoops(scoops))
+    print(display_scoops(scoops)) # prints a number of scoops and displays the word to guess
     print(
         f"""
         {Fore.LIGHTBLUE_EX}{word_completion}
@@ -142,14 +153,19 @@ def start_game():
     )
     # handles the users input
     while not guessed and scoops > 0:
+        guess = users_letter()
         print(
             f"You've guessed these letters so far: "
             f"{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
         )
-        guess = users_letter()
         # checks if a guessed letter has already been guessed or belongs to the word
         if len(guess) == 1 and guess.isalpha():
-            if guess not in word:
+            if guess in guessed_letters:
+                    print(
+                    f"❌ Sorry, you've already guessed this one. "
+                    f"Try a different letter!"
+                )
+            elif guess not in word:
                 scoops_number()
                 guessed_letters.append(guess)
             else:
@@ -163,16 +179,7 @@ def start_game():
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
-        elif len(guess) == len(word) and guess.isalpha():
-            if guess in guessed_words:
-                print("You have already guessed the word", guess)
-            elif guess != word:
-                print(guess, "is not in the word.")
-                scoops_number()
-                guessed_letters.append(guess)
-            else:
-                guessed: True
-                word_completion = word
+        
         else:
             print(f"{Fore.RED}It is not a valid guess.")
         print(display_scoops(scoops))
@@ -193,24 +200,13 @@ def start_game():
         print(f"The word was ➡️  " + word + ".")
 
 
-def users_letter():
-    """ 
-    Asks a user to type a letter and checks
-    if it is in the word
-    """
-    while True:
-        guess = input("Please guess a letter:\n").upper()
-        if validate_letter(guess):
-            break
-    return guess
-
 
 def scoops_number():
     """ Decrements scoops for each wrong guess """
     global scoops
     scoops -= 1
     print(
-        f"Wrong letter!"
+        f"❌ Wrong letter! "
         f"You have {Style.BRIGHT}{Fore.YELLOW}{scoops}{Style.RESET_ALL}"
         f" scoops of 🍦 left."
         )
