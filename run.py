@@ -19,8 +19,9 @@ scoops = 6  # number ice cream scoops that can be lost
 def choose_level(level):
     """ Chooses level based on user input """
     if level == "1":
-        print(f"{Fore.LIGHTBLUE_EX}Easy:{Fore.RESET} Get " +
-            "your 🍦 easily cause it is 🔥.\n"
+        print(
+            f"{Fore.LIGHTBLUE_EX}Easy:{Fore.RESET}" +
+            "Get your 🍦 easily cause it is 🔥.\n"
         )
         return "easy"
     elif level == "2":
@@ -46,7 +47,8 @@ def validate_level(value):
     1, 2, 3 or 4 for back
     """
     try:
-        if (value != "1") and (value != "2") and (value != "3" and (value != "4")):
+        if (value != "1") and (value != "2") and (value != "3"
+        and (value != "4")):
             raise ValueError(
                 f"Please only enter 1, 2, 3 or 4. You typed "
                 f"{Style.BRIGHT}{Fore.YELLOW}{value}"
@@ -135,16 +137,17 @@ def validate_letter(letter):
 
 def start_game():
     """
-    Runs and updates game development, provides 
+    Runs and updates game development, provides
     feedback to the user until the game is over.
     """
     # variables
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []  # stores letters guessed by user
-    guessed_words = [] 
+    guessed_words = []
     print("Let's play!")
-    print(display_scoops(scoops)) # prints a number of scoops and displays the word to guess
+    # prints a scoops numberand displays the word to guess
+    print(display_scoops(scoops))
     print(
         f"""
         {Fore.LIGHTBLUE_EX}{word_completion}
@@ -158,10 +161,10 @@ def start_game():
             f"You've guessed these letters so far: "
             f"{Style.BRIGHT}{Fore.YELLOW}{' '.join(guessed_letters)}\n"
         )
-        # checks if a guessed letter has already been guessed or belongs to the word
+        # checks if a letter has already been guessed or belongs to word
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                    print(
+                print(
                     f"❌ Sorry, you've already guessed this one. "
                     f"Try a different letter!"
                 )
@@ -179,7 +182,6 @@ def start_game():
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
-        
         else:
             print(f"{Fore.RED}It is not a valid guess.")
         print(display_scoops(scoops))
@@ -193,12 +195,8 @@ def start_game():
     if guessed:
         print("Congrats, you guessed the word! You win!")
     else:
-        print(
-            f"Sorry, your cane is empty 😢." 
-            f" Game is over!"
-        )
-        print(f"The word was ➡️  " + word + ".")
-
+        print(f"Sorry, your cane is empty 😢. Game is over!")
+        print(f"The word was ➡️  {Style.BRIGHT}{word}.")
 
 
 def scoops_number():
@@ -213,13 +211,13 @@ def scoops_number():
 
 
 def game_rules():
-    """ 
+    """
     Function to ask the player if he wants
-    to read the game rules 
+    to read the game rules
     """
     while True:
         print(
-            f"Do you want to read the game " 
+            f"Do you want to read the game "
             f"{Style.BRIGHT}{Fore.YELLOW}rules? (Y/N)"
         )
         answer = input().upper().strip()
@@ -294,7 +292,7 @@ def restart_game():
             return False
         else:
             print(
-                f"{Fore.RED}Invalid choice:{Style.RESET_ALL}" 
+                f"{Fore.RED}Invalid choice:{Style.RESET_ALL}"
                 f" please enter 'Y' or 'N'."
             )
 

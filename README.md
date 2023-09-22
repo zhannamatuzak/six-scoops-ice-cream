@@ -50,9 +50,10 @@ As this is simple terminal based application, the design process for the user in
 
 Different colour choices  are used in order to highlight and categorise messages to the user.
 
-For example, error messages are displayed in red, while guessed letters are in bright yellow. 
+For example, error messages are displayed in red or with the warning emoji, while guessed letters are displayed in bright yellow.
 
 The word itself is displayed blue for every correct guess. 
+
 If the word is not guessed, the user can see the secret word with the blue arrow emoji on the left.
 
 Emojis are used in the introduction throughout the game because the game is for kids.
@@ -67,6 +68,54 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ## Technologies Used
 
+## Testing
+
+The program was tested constantly during its development process.
+
+### Validator Testing
+
+ - HTML, CSS and JavaScript validation does not apply to this project. The template provided by Code Institute as provided to all students is assumed to be tested for the above. No further change or manipulation of the template's default HTML, CSS and JavaScript files has been performed.
+
+ - PEP8 CI Python Validator
+
+ #run.py#
+    - Error: On line 13 the code line contains whitespace
+    - Solution: The whitespace is used for the design purpose and is not deleted intentionally.
+ ![file run.py testing](assets/images/run-validate.png)
+
+#intro.py"#
+    - Error 1: From line 9 to 14 found invalid escape sequences and whitespaces.
+    - Solution: It can not be fix because it is a graphic ilustration.
+    - Error 2: On lines 23, 25, 37, 45, and 53 are whitespaces.
+    - Solution: I do not find them if I click to detect it. I suppose it is due to emojis usage.
+ ![file intro.py testing](assets/images/intro-validate.png) 
+
+ #six_scoops.py#
+   - Error: Whitespaces and escape sequences are found. 
+   - Solution: It caccot be solved because the file contains graphic illustrations.
+ ![file sic_scoops.py testing](assets/images/six-scoops-validate.png)  
+
+### Testing User Stories (Functionality)
+
+| Expectation (As a user, I want to...)  | Result (As a user, I...)    |
+| :---------------------------------: | :------------------------------:|
+| be able to read an introduction when first loading the programm | see a quick game introduction print out on the screen when the programm loads |
+| choose whether to read the rules to the game or not | can chose yes or nor option |
+| read the rules without introduction word in terminal | see the game rules explained clearly separated in parts |
+| choose a difficulty level | can choose between 3 levels: easy, medium, hard |
+| be able to go back after choosing the level | can choose go back option when choosing a level |
+| know how many scoops of ice cream I start off with | I am clearly informed that I start off with 6 scoops |
+| be informed if my data input is not valid and how to solve this issue | see an error message after I input invalid data, telling me what data type is required |
+| see which letters I have already guessed | can see my already guessed letters listed out on screen |
+| see the word being displayed for every correct guess | can see every correct letter being added to the word, spelling it out gradually |
+| be informed how many scoops I have left after a wrong guess | I am told how many remaining scoops I have after a wrong guess |
+| see a graphic visualising my lost scoops | can see the ice cream graphics building a section at a time for each wrong guess |
+| learn the word to be guessed after losing the game | can read the word printed out on screen after I lost the game |
+| see the full word displayed after completing the game successfully | can read the word fully spelled out after guessing it correctly |
+| know when the game is over (won or lost) | can read a message telling me I either won or lost the game when the game terminates |
+| be able to play the game again after it is finished | can choose yes or no options |
+| be able to restart the game or not when after it's finished | can choose between a Y/N option to restart the game after finishing |
+
 ## Bugs
 
 + **Solved bugs**
@@ -74,7 +123,7 @@ As the kids do not like reading, I colored the important words in the questions 
 1. The ```word_completion``` string looked like one line. And when the guessed letters joined it, letters sticked to each other. The text readability was very poor. So the user may have a bad experience.
 
   - *Solutions:* added spaces between each underscore character
-## Testing
+
 
 ---
 
