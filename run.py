@@ -169,7 +169,7 @@ def start_game():
             elif guess != word:
                 print(guess, "is not in the word.")
                 scoops_number()
-                guessed_words.append(guess)
+                guessed_letters.append(guess)
             else:
                 guessed: True
                 word_completion = word
@@ -250,7 +250,7 @@ def game_rules():
         else:
             print(
                 f"{Fore.RED}Invalid choice:{Style.RESET_ALL}"
-                f"please enter 'Y' or 'N'."
+                f" please enter 'Y' or 'N'."
             )
 
 

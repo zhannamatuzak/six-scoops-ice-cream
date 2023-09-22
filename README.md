@@ -5,6 +5,36 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 ![Responsive mock-up](assets/images/)
 
+---
+
+## User Stories
+
+**As a user I want to**
+
+- be able to read an introduction when first loading the programm
+- choose whether to read the rules to the game or not
+- have a bit of time to read the parts of rules
+- read the rules without introduction word in terminal
+- choose a difficulty level
+- be able to go back after choosing the level
+- know how many scoops of ice cream I start off with
+- be informed if my data input is not valid and how to solve this issue
+- see which letters I have already guessed
+- see the word being displayed for every correct guess
+- be informed how many scoops I have left after a wrong guess
+- see a graphic visualising my lost scoops
+- learn the word to be guessed after losing the game
+- see the full word displayed after completing the game successfully
+- know when the game is over (won or lost)
+- be able to play the game again after it is finished
+- be able to restart the game
+
+**As a site administrator I want to**
+
+- be able to make upgrades to the game (add six letter words, create scoreboard)
+- offer the user a short yet entertaining game
+
+---
 
 ## Planning
 
@@ -12,9 +42,26 @@ The following flowchart is created with [lucidchart](www.lucidchart.com). It vis
 
 ![Flowchart](assets/images/flowchart-six-scoops.jpeg)
 
+---
+
 ## Design
 
-## User Stories
+As this is simple terminal based application, the design process for the user interface was limited.
+
+Different colour choices  are used in order to highlight and categorise messages to the user.
+
+For example, error messages are displayed in red, while guessed letters are in bright yellow. 
+
+The word itself is displayed blue for every correct guess. 
+If the word is not guessed, the user can see the secret word with the blue arrow emoji on the left.
+
+Emojis are used in the introduction throughout the game because the game is for kids.
+
+Ice cream graphic illustration was made by me.
+
+As the kids do not like reading, I colored the important words in the questions or descriptions and put emojis near them.
+
+---
 
 ## Features
 
@@ -28,6 +75,8 @@ The following flowchart is created with [lucidchart](www.lucidchart.com). It vis
 
   - *Solutions:* added spaces between each underscore character
 ## Testing
+
+---
 
 ## Deployment
 
@@ -49,7 +98,6 @@ as provided with the Python Essentials template.
     - Run the following command as on the screenshot below:
 
     `git clone https://github.com/zhannamatuzak/six-scoops-ice-cream.git`
- ![clone repo](assets/images/clone.png)
 
  - Install Python module dependencies:
 
@@ -61,10 +109,11 @@ as provided with the Python Essentials template.
 
  - Create a [Heroku](https://dashboard.heroku.com) account (if not already existing) to host the project.
 
- - Create a new app with Heroku:
+ - Create a new app with Heroku by clicking on "Creat a new app":
+
  ![New app](assets/images/create-app.png)
 
- - Create new app
+ - Provide your app name and region:
 
     - Write your project name. 
     The repository name on GitHub and the Heroku app name do not need to be the same. 
@@ -78,6 +127,7 @@ as provided with the Python Essentials template.
     - You must add a Config Var provided by Code Institute for their student in Heroku's Settings.
     - If you do not add this, then your deployment may fail.
     - Also, you can store here your sensitive date, if you have.
+
  ![Config var](assets/images/app-name.png)
 
 - In Settings:
@@ -90,10 +140,8 @@ as provided with the Python Essentials template.
     
  - Go to the Deploy section. Here you can choose the deployment method: 
 
-    - Select GitHub;
+    - Select GitHub.
     - Click "Connect to GitHub".
-
- ![Connect to GitHub](assets/images/connect-repo.png)
     - Search for your repository name by clicking "Search". 
     - Then click "Connect" to link your Heroku account to your repository code.
     - Scroll down the page. There are two opeions in this section:
@@ -104,6 +152,8 @@ as provided with the Python Essentials template.
     - Wait for instalation.
     - Then you will se the message "Your app was successfully deployed".
     - Click the "View" button which takes to the deployed link.
+
+ ![Connect to GitHub](assets/images/connect-repo.png)
 
 ## Credits
 
