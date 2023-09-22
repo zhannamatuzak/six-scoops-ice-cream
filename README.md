@@ -3,7 +3,7 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 [Link to live site]()
 
-![Responsive mock-up](assets/images/)
+![Responsive mock-up](assets/images/mock-up.png)
 
 ---
 
@@ -66,16 +66,58 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ## Features
 
+### Existing Features
 
+#Logo#
+
+ - Displays game title using ASCII
+
+ ![Logo image](assets/images/logo.png)
+
+#Introduction#
+ ![Inro image](assets/images/introduction.png)
+ 
 
 ### Possible Future Features
 
  - The ```word_completion``` string looks like one line. And when the guessed letters joined it, letters sticked to each other. 
  To improve the text readability for kids, spaces between each underscore character can be added. 
 
- ---
+ - Show the user not only which letters he has already guessed but also add a possibility to guess the whole word at once and show list of guessed words.
+
+---
 
 ## Technologies Used
+
+### Languages:
+
+- [Python 3.11.5](https://www.python.org/downloads/): used to anchor the project and direct all application behavior
+
+- [JavaScript](https://www.javascript.com/): used to provide the start script needed to run the Code Institute mock terminal in the browser
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) used to construct the elements involved in building the mock terminal in the browser
+---
+### Frameworks/Libraries, Programmes and Tools:
+#### Python modules/packages:
+
+##### Standard library imports:
+
+- [random](https://docs.python.org/3/library/random.html) was used to implement pseudo-random number generation.
+- [os](https://docs.python.org/3/library/os.html ) was used to clear the terminal before running the program and bevor showing the rules.
+- [time](https://docs.python.org/3/library/time.html) was used to delay print statements.
+- [string](https://docs.python.org/3/library/string.html) was used for string (ascii, emojis) manipulation
+- [sys](https://docs.python.org/3/library/sys.html) was used to create a typewriter-effect animation for strings.
+ 
+##### Third-party imports:
+
+- [Colorama](https://pypi.org/project/colorama/) was used to add colors and styles to the project.
+
+#### Other tools:
+
+- [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
+- [GitHub](https://github.com/) was used to host the code of the website.
+- [Canva Pro](https://www.canva.com/) and [bigimage](https://bigimage.11zon.com/en/image-crop/crop-image-without-losing-quality.php )were used to make and resize images for the README file.
+- [Draw.io](https://www.lucidchart.com/) was used to make a flowchart for the README file.
 
 ---
 
@@ -137,9 +179,9 @@ The program was tested constantly during its development process.
 
 + **Solved bugs**
 
-1. The ```scoops``` variable was not mention as global in function.
+ 1. The ```scoops``` variable was not mention as global in function.
 
-  - *Solutions:* declare variable as global inside the function.
+  *Solutions:* declare variable as global inside the function.
 
 ```
 def scoops_number():
@@ -234,4 +276,25 @@ as provided with the Python Essentials template.
 
 ## Credits
 
+### Data
+
+ - The summer words list was created by me. I searched for words on the websites for learning English.
+ - Logo was created here: [Text to ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+ - Ice creame with six scoops visualisation was created by me.
+
+ ### Code
+
+ - Template and Terminal: [Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) provided by Code Institute.
+ - I watched this [Tutorial by Kylie Ying](https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s) to understand how the hangman game is build.
+ - This [Kite Channel](https://www.youtube.com/watch?v=m4nEnsavl6w&t=164s) helped me to build the main function to start the game.
+ - [This Youtube Channel](https://www.youtube.com/watch?v=6SPDvPK38tw) helped me to understand how to validate user inputs.
+
+### Styling
+
+- Colors were used from Built-in module [Colorama](https://github.com/techwithtim/ColoredTextInPython/blob/main/main.py)
+
+
 ## Acknowledgements
+
+I am very thankful to my menotor [Iuliia Konovalova](https://github.com/IuliiaKonovalova/madlib_with_python) for her sessions. 
+Also, a big Thanks for support to the students who are with me in the same cohort and [Kay](https://github.com/Kathrin-ddggxh) who hosts our stand up meetings. 
