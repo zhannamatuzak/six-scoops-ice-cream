@@ -68,23 +68,86 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ### Existing Features
 
-##Logo##
+Logo
 
  - Displays game title using ASCII
 
  ![Logo image](assets/images/logo.png)
 
-##Introduction##
+Introduction
 
  - Displays an introduction word to the user and asks whether he wants to read the rules or not.
 
  ![Inro image](assets/images/intro-word.png)
 
- ##Rules##
+ Rules
 
  - Displays the user the rules in several parts with time delays after clearing the terminal.
- ![Inro image](assets/images/rules-image.png)
 
+ ![Rules image](assets/images/rules-image.png)
+
+ Level Choice and Go Back Option
+
+ - Allows user to choose one of three difficulty levels or go back to main screen.
+
+ ![Level and go back image](assets/images/level-back-image.png)
+
+ Invalid Data
+
+ - Informs the user if input data was not valid.
+ - Tells the user which data type is required and what the user typed incorrectly.
+ - Displays for invalid level and letter input.
+
+![Invalid data image](assets/images/invalid-data.png)
+
+Display of Used Letters
+
+ - Lists the letters that the user has guessed.
+
+ ![List of used letters](assets/images/guessed-letters.png)
+
+Duplicated Letter Message
+
+ - Informs the user when a letter guess is duplicate.
+ - Tell user to guess a different letter.
+
+![Duplicated letter](assets/images/duplicated-letter.png)
+
+Word Display
+
+ - Displays all correctly guessed letters and builds the entire word.
+
+ ![Duplicated letter](assets/images/word-display.png)
+
+ Scoops Count
+
+ - Informs user of remaining scoops of ice cream after each wrong guess.
+
+ ![Scoops count](assets/images/scoops-count.png)
+
+ Six Scoops Ice Cream Graphics
+
+ - Shows six scoops of ice cream and takes one away for each wrong guess.
+
+ ![Six scoops taking away](assets/images/scoops-graph.png)
+
+ Won Message, Lost Message, and Restart Option:
+
+ Won Message
+
+ - Informs and congratulates user when game is won.
+ - Shows after fully displayed word.
+
+Lost Message
+
+ - Informs user when game is lost.
+ - Reveals to user the word that was to be guessed.
+
+ Restart Option
+
+ - Offers user the choice to play again after finishing the game.
+
+ ![Restart](assets/images/won-lost-restart.png)
 
 
 ### Possible Future Features
