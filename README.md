@@ -1,7 +1,7 @@
 # Six Scoops
-Six Scoops is a terminal-based alternative to a hangman game for kids. This game combines learning with fun. The player tries to guess a word letter by letter before running out of six scoops of ice cream. It is told the player that it is very hot and it is a good idea to get an ice cream. Playing this game is an effective way to encourage kids' interest in learning English. While playing this game, kids will learn easy vocabulary (100 words) about summer. The words contain 3 to 5 letters and are appropriate for young learners.
+Six Scoops is a terminal-based alternative to a hangman game for kids. This game combines learning with fun. The player tries to guess a word letter by letter before running out of six scoops of ice cream. The player is told that it is very hot and that it is a good idea to get an ice cream. Playing this game is an effective way to encourage kids' interest in learning English. While playing this game, kids will learn easy vocabulary (100 words) about summer. The words contain 3 to 5 letters and are appropriate for young learners.
 
-[Link to live site]()
+[Link to live site](https://six-scoops-96d668c6790e.herokuapp.com/)
 
 ![Responsive mock-up](assets/images/mock-up.png)
 
@@ -26,7 +26,7 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
  - ✅ For each wrong guess you lose one scoop. And you can play until the cane is empty.
 
- - ✅ To play the game again from the beginning press simply restart the game at the top; or type "y" on my question at the end to start from choosing the level.
+ - ✅ To play the game again from the beginning press simply "RUN PROGRAM" button at the top to restart; or type "y" on my question at the end to start by choosing the level.
 
  ---
 
@@ -34,8 +34,8 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 **As a user I want to**
 
-- be able to read an introduction when first loading the programm
-- choose whether to read the rules to the game or not
+- be able to read an introduction when first loading the program
+- choose whether to read the rules for the game or not
 - have a bit of time to read the parts of rules
 - read the rules without introduction word in terminal
 - choose a difficulty level
@@ -63,7 +63,7 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 The following flowchart is created with [lucidchart](https://www.lucidchart.com/). It visualizes the planning process for this application. Also, it was adited in PDF editor.
 
-![Flowchart](assets/images/flowchart-six-scoops.jpeg)
+![Flowchart](assets/images/flowchart-six-scoops.jpg)
 
 ---
 ## Data Model
@@ -195,11 +195,11 @@ Lost Message
 
 ### Languages:
 
-- [Python 3.11.5](https://www.python.org/downloads/): used to anchor the project and direct all application behavior
+- [Python 3.11.5](https://www.python.org/downloads/): used to anchor the project and direct all application behavior.
 
-- [JavaScript](https://www.javascript.com/): used to provide the start script needed to run the Code Institute mock terminal in the browser
+- [JavaScript](https://www.javascript.com/): used to provide the start script needed to run the Code Institute mock terminal in the browser.
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) used to construct the elements involved in building the mock terminal in the browser
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): used to construct the elements involved in building the mock terminal in the browser.
 ---
 ### Frameworks/Libraries, Programmes and Tools:
 #### Python modules/packages:
@@ -209,7 +209,7 @@ Lost Message
 - [random](https://docs.python.org/3/library/random.html) was used to implement pseudo-random number generation.
 - [os](https://docs.python.org/3/library/os.html ) was used to clear the terminal before running the program and bevor showing the rules.
 - [time](https://docs.python.org/3/library/time.html) was used to delay print statements.
-- [string](https://docs.python.org/3/library/string.html) was used for string (ascii, emojis) manipulation
+- [string](https://docs.python.org/3/library/string.html) was used for string (ascii, emojis) manipulation.
 - [sys](https://docs.python.org/3/library/sys.html) was used to create a typewriter-effect animation for strings.
  
 ##### Third-party imports:
@@ -250,7 +250,7 @@ The program was tested constantly during its development process.
 
  - six_scoops.py
    - Error: Whitespaces and escape sequences are found. 
-   - Solution: It caccot be solved because the file contains graphic illustrations.
+   - Solution: It cannot be solved because the file contains graphic illustrations.
 
  ![file sic_scoops.py testing](assets/images/six-scoops-validate.png)  
 
@@ -280,6 +280,7 @@ The program was tested constantly during its development process.
 ### Manual Testing
 
 The functionality of the game was tested by me right away after writing a new function.
+Moreover my husband checked the README.md file and played the game.
 
 ---
 
@@ -305,7 +306,7 @@ def scoops_number():
 
  2. In the ```restart_game()``` function I wanted that the user plays the game again if he chooses the "y" option. If the user types "y" he should start the game by choosing the level. The problem was that I wrote to start from the function ```main()```. It did not work as well because I forgot to reset ```scoops = ``` to 6, the global variable.
 
-  *Solution:* I added the global variable to the function and reseet it to 6. Then I added the needed functions to start from choosing the level  copied from ```main()``` function.
+  *Solution:* I added the global variable to the function and reset it to 6. Then I added the needed functions to start from choosing the level  copied from ```main()``` function.
 
  ```
  def restart_game():
@@ -335,6 +336,18 @@ def scoops_number():
                 f" please enter 'Y' or 'N'."
             )
  ```       
+ 
+ 3. The condition line is too long.
+  
+   *Solution:* I separated the conditions into two lines.
+
+ ```
+  if (
+            (value != "1" and value != "2") and
+            (value != "3" and value != "4")
+        ):
+ ```
+
 
  **Remaining Bugs**
 
