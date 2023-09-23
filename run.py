@@ -189,7 +189,7 @@ def start_game():
         print(display_scoops(scoops))
         print(
             f"""
-            {Fore.LIGHTBLUE_EX}{word_completion}
+            Guess this word: {Fore.LIGHTBLUE_EX}{word_completion}
 
             """
         )
