@@ -61,12 +61,12 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 ## Planning
 
-The following flowchart is created with [lucidchart](www.lucidchart.com). It visualizes the planning process for this application. Also, it was adited in PDF editor.
+The following flowchart is created with [lucidchart](https://www.lucidchart.com/). It visualizes the planning process for this application. Also, it was adited in PDF editor.
 
 ![Flowchart](assets/images/flowchart-six-scoops.jpeg)
 
 ---
-##Data Model
+## Data Model
 
 Within the application, the following python script files are defined:
 
@@ -279,7 +279,7 @@ The program was tested constantly during its development process.
 
 ### Manual Testing
 
-The functionality of the game was tested by me right away after writing the new function.
+The functionality of the game was tested by me right away after writing a new function.
 
 ---
 
@@ -289,7 +289,7 @@ The functionality of the game was tested by me right away after writing the new 
 
  1. The ```scoops``` variable was not mention as global in function.
 
-  *Solutions:* declare variable as global inside the function.
+  *Solutions:* declare the variable as global inside the function.
 
 ```
 def scoops_number():
@@ -303,9 +303,9 @@ def scoops_number():
         )
 ```
 
- 2. In ```restart_game()``` function I wanted that the user play the game again if he chooses "yes" option. If the user types "y" he should start the game from choosing the level. The problem was that I wrote to start from function ```main()```. It did not work as well because I forgot to reset ```scoops = ``` to 6, the global variable.
+ 2. In the ```restart_game()``` function I wanted that the user plays the game again if he chooses the "y" option. If the user types "y" he should start the game by choosing the level. The problem was that I wrote to start from the function ```main()```. It did not work as well because I forgot to reset ```scoops = ``` to 6, the global variable.
 
-  *Solution:* I added global variable to the function and reseet it to 6. Then I added the needed functions to start from choosing the level  from ```main()``` function.
+  *Solution:* I added the global variable to the function and reseet it to 6. Then I added the needed functions to start from choosing the level  copied from ```main()``` function.
 
  ```
  def restart_game():
@@ -444,5 +444,5 @@ as provided with the Python Essentials template.
 
 ## Acknowledgements
 
-I am very thankful to my menotor [Iuliia Konovalova](https://github.com/IuliiaKonovalova/madlib_with_python) for her sessions. 
-Also, a big Thanks for support to the students who are with me in the same cohort and [Kay](https://github.com/Kathrin-ddggxh) who hosts our stand up meetings. 
+I am very thankful to my mentor [Iuliia Konovalova](https://github.com/IuliiaKonovalova/madlib_with_python) for her sessions. 
+Also, a big Thanks for support to the students who are with me in the same cohort and [Kay](https://github.com/Kathrin-ddggxh) who hosts our stand-up meetings. 

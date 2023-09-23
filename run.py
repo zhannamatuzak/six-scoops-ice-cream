@@ -57,7 +57,7 @@ def validate_level(value):
             )
     except ValueError as e:
         print(f"{Fore.RED}Invalid data:{Fore.RESET} {e}," +
-            "please try again.")
+            " please try again.")
         return False
     return True
 
@@ -195,7 +195,7 @@ def start_game():
         )
     # shows the end of the game: user wins or loses
     if guessed:
-        print("Congrats, you guessed the word! 😎 You win!")
+        print("Congrats, you guessed the word! 😎  You win!")
     else:
         print(f"Sorry, your cane is empty 😢. Game is over!")
         print(f"The word was ➡️  {Style.BRIGHT}{word}.")
