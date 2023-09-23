@@ -144,12 +144,13 @@ def start_game():
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []  # stores letters guessed by user
+    global scoops
     print("Let's play!")
     # prints a scoops numberand displays the word to guess
     print(display_scoops(scoops))
     print(
         f"""
-        {Fore.LIGHTBLUE_EX}{word_completion}
+        Guess this word: {Fore.LIGHTBLUE_EX}{word_completion}
         
         """
     )
@@ -277,14 +278,21 @@ def typewriter(text, color=Fore.WHITE):
 
 def restart_game():
     """ Asks player if he wants to play again """
+    global scoops, word
+    scoops = 6  # reset scoops to 6
+    
     while True:
         print(
             f"Do you want to play "
             f"{Style.BRIGHT}{Fore.YELLOW}again? (Y/N)"
         )
         choice = input().upper().strip()
+        # Starts the game from choosing the level
         if choice == "Y":
-            main()
+            word_list = user_level()
+            word = get_word(word_list)
+            start_game()
+            restart_game()
             return True
         elif choice == "N":
             print("Bye! Hope, you did like the 🍦 game!")

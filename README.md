@@ -201,7 +201,7 @@ The program was tested constantly during its development process.
 
  - HTML, CSS and JavaScript validation does not apply to this project. The template provided by Code Institute as provided to all students is assumed to be tested for the above. No further change or manipulation of the template's default HTML, CSS and JavaScript files has been performed.
 
- - PEP8 CI Python Validator
+ - [PEP8 CI Python Validator](https://pep8ci.herokuapp.com/):
 
  - run.py
     - Error: On line 13 the code line contains whitespace
@@ -222,6 +222,7 @@ The program was tested constantly during its development process.
    - Solution: It caccot be solved because the file contains graphic illustrations.
 
  ![file sic_scoops.py testing](assets/images/six-scoops-validate.png)  
+
 
 ### Testing User Stories (Functionality)
 
@@ -266,6 +267,43 @@ def scoops_number():
         f" scoops of 🍦 left."
         )
 ```
+
+2. In ```restart_game()``` function I wanted that the user play the game again if he chooses "yes" option. If the user types "y" he should start the game from choosing the level. The problem was that I wrote to start from function ```main()```. It did not work as well because I forgot to reset ```scoops = ``` to 6, the global variable.
+
+ *Solution:* I added global variable to the function and reseet it to 6. Then I added the needed functions to start from choosing the level  from ```main()``` function.
+
+ ```
+ def restart_game():
+    """ Asks player if he wants to play again """
+    global scoops, word
+    scoops = 6  # resets scoops to 6
+    
+    while True:
+        print(
+            f"Do you want to play "
+            f"{Style.BRIGHT}{Fore.YELLOW}again? (Y/N)"
+        )
+        choice = input().upper().strip()
+        # Starts the game from choosing the level
+        if choice == "Y":
+            word_list = user_level()
+            word = get_word(word_list)
+            start_game()
+            restart_game()
+            return True
+        elif choice == "N":
+            print("Bye! Hope, you did like the 🍦 game!")
+            return False
+        else:
+            print(
+                f"{Fore.RED}Invalid choice:{Style.RESET_ALL}"
+                f" please enter 'Y' or 'N'."
+            )
+ ```       
+
+ **Remaining Bugs**
+
+ No bugs remaining.
 
 ---
 
