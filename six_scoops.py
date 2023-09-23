@@ -1,4 +1,4 @@
-# choses ice scream ilustration
+# chooses ice scream ilustration
 def display_scoops(scoops):
     stages = [
           """

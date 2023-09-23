@@ -7,6 +7,29 @@ Six Scoops is a terminal-based alternative to a hangman game for kids. This game
 
 ---
 
+## How to Play
+
+ - ✅ Select your skill level. 
+
+ - ✅ The word you have to guess will get longer as your skill level increases.
+
+ - ✅ Level:
+    - Easy Level: Short words (3 letters) for beginners.
+    - Medium Level: 4-letter words for those seeking a challenge.
+    - Hard Level: 5-letter challenging words for experts.
+
+ - ✅ Then try and guess the word one letter at a time before you lose all six scoops of ice cream.
+
+ - ✅ Here is a hint: all words are related to summer.
+
+ - ✅ You will start off with 6 scoops of ice cream. 
+
+ - ✅ For each wrong guess you lose one scoop. And you can play until the cane is empty.
+
+ - ✅ To play the game again from the beginning press simply restart the game at the top; or type "y" on my question at the end to start from choosing the level.
+
+ ---
+
 ## User Stories
 
 **As a user I want to**
@@ -43,6 +66,15 @@ The following flowchart is created with [lucidchart](www.lucidchart.com). It vis
 ![Flowchart](assets/images/flowchart-six-scoops.jpeg)
 
 ---
+##Data Model
+
+Within the application, the following python script files are defined:
+
+ - six_scoops.py - contains the function that holds six ice cream scoops graphs.
+ - intro.py - contains logo and rules parts variables.
+ - run.py - the main file that runs the game and contains functions to validate level and user typed letter, start and restart game.
+
+ ---
 
 ## Design
 
@@ -68,31 +100,31 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ### Existing Features
 
-Logo
+***Logo***
 
  - Displays game title using ASCII
 
  ![Logo image](assets/images/logo.png)
 
-Introduction
+***Introduction***
 
  - Displays an introduction word to the user and asks whether he wants to read the rules or not.
 
  ![Inro image](assets/images/intro-word.png)
 
- Rules
+ ***Rules***
 
  - Displays the user the rules in several parts with time delays after clearing the terminal.
 
  ![Rules image](assets/images/rules-image.png)
 
- Level Choice and Go Back Option
+ ***Level Choice and Go Back Option***
 
  - Allows user to choose one of three difficulty levels or go back to main screen.
 
  ![Level and go back image](assets/images/level-back-image.png)
 
- Invalid Data
+ ***Invalid Data***
 
  - Informs the user if input data was not valid.
  - Tells the user which data type is required and what the user typed incorrectly.
@@ -100,38 +132,38 @@ Introduction
 
 ![Invalid data image](assets/images/invalid-data.png)
 
-Display of Used Letters
+***Display of Used Letters***
 
  - Lists the letters that the user has guessed.
 
  ![List of used letters](assets/images/guessed-letters.png)
 
-Duplicated Letter Message
+***Duplicated Letter Message***
 
  - Informs the user when a letter guess is duplicate.
  - Tell user to guess a different letter.
 
 ![Duplicated letter](assets/images/duplicated-letter.png)
 
-Word Display
+***Word Display***
 
  - Displays all correctly guessed letters and builds the entire word.
 
  ![Duplicated letter](assets/images/word-display.png)
 
- Scoops Count
+ ***Scoops Count***
 
  - Informs user of remaining scoops of ice cream after each wrong guess.
 
  ![Scoops count](assets/images/scoops-count.png)
 
- Six Scoops Ice Cream Graphics
+ ***Six Scoops Ice Cream Graphics***
 
  - Shows six scoops of ice cream and takes one away for each wrong guess.
 
  ![Six scoops taking away](assets/images/scoops-graph.png)
 
- Won Message, Lost Message, and Restart Option:
+ ***Won Message, Lost Message, and Restart Option:***
 
  Won Message
 
@@ -204,8 +236,7 @@ The program was tested constantly during its development process.
  - [PEP8 CI Python Validator](https://pep8ci.herokuapp.com/):
 
  - run.py
-    - Error: On line 13 the code line contains whitespace
-    - Solution: The whitespace is used for the design purpose and is not deleted intentionally.
+    - Error: none.
 
  ![file run.py testing](assets/images/run-validate.png)
 
@@ -246,6 +277,10 @@ The program was tested constantly during its development process.
 | be able to play the game again after it is finished | can choose yes or no options |
 | be able to restart the game or not when after it's finished | can choose between a Y/N option to restart the game after finishing |
 
+### Manual Testing
+
+The functionality of the game was tested by me right away after writing the new function.
+
 ---
 
 ## Bugs
@@ -268,9 +303,9 @@ def scoops_number():
         )
 ```
 
-2. In ```restart_game()``` function I wanted that the user play the game again if he chooses "yes" option. If the user types "y" he should start the game from choosing the level. The problem was that I wrote to start from function ```main()```. It did not work as well because I forgot to reset ```scoops = ``` to 6, the global variable.
+ 2. In ```restart_game()``` function I wanted that the user play the game again if he chooses "yes" option. If the user types "y" he should start the game from choosing the level. The problem was that I wrote to start from function ```main()```. It did not work as well because I forgot to reset ```scoops = ``` to 6, the global variable.
 
- *Solution:* I added global variable to the function and reseet it to 6. Then I added the needed functions to start from choosing the level  from ```main()``` function.
+  *Solution:* I added global variable to the function and reseet it to 6. Then I added the needed functions to start from choosing the level  from ```main()``` function.
 
  ```
  def restart_game():
@@ -384,6 +419,8 @@ as provided with the Python Essentials template.
 
  ![Connect to GitHub](assets/images/connect-repo.png)
 
+---
+
 ## Credits
 
 ### Data
@@ -403,6 +440,7 @@ as provided with the Python Essentials template.
 
 - Colors were used from Built-in module [Colorama](https://github.com/techwithtim/ColoredTextInPython/blob/main/main.py)
 
+---
 
 ## Acknowledgements
 

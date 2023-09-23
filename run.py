@@ -47,15 +47,17 @@ def validate_level(value):
     1, 2, 3 or 4 for back
     """
     try:
-        if (value != "1") and (value != "2") and (value != "3"
-        and (value != "4")):
+        if (
+            (value != "1" and value != "2") and
+            (value != "3" and value != "4")
+        ):
             raise ValueError(
                 f"Please only enter 1, 2, 3 or 4. You typed "
                 f"{Style.BRIGHT}{Fore.YELLOW}{value}{Fore.RESET}"
             )
     except ValueError as e:
         print(f"{Fore.RED}Invalid data:{Fore.RESET} {e}," +
-            " please try again.")
+            "please try again.")
         return False
     return True
 
@@ -151,7 +153,7 @@ def start_game():
     print(
         f"""
         Guess this word: {Fore.LIGHTBLUE_EX}{word_completion}
-        
+
         """
     )
     # handles the users input
@@ -280,7 +282,7 @@ def restart_game():
     """ Asks player if he wants to play again """
     global scoops, word
     scoops = 6  # reset scoops to 6
-    
+
     while True:
         print(
             f"Do you want to play "

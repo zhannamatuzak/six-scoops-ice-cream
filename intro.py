@@ -20,7 +20,7 @@ RULES_PART_1 = """
 =========
 """
 RULES_PART_2 = """
-✅  elect your skill level. 
+✅  Select your skill level. 
 
 ✅  The word you have to guess will get longer 
 as your skill level increases.
@@ -50,8 +50,8 @@ Do not lose, beacuse it is 🔥 outside.
 """
 
 RULES_PART_6 = """
-✅  Cheer up! You can try again 😉, 
-simply restart the game.
-Just press the RUN PROGRAM at the top.
+✅  Cheer up! You can try again 😉,  
+press the RUN PROGRAM at the top or
+type "y" to play again.
 Good luck! 😎
 """
