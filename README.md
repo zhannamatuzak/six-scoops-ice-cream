@@ -102,7 +102,7 @@ As the kids do not like reading, I colored the important words in the questions 
 
 ***Logo***
 
- - Displays game title using ASCII
+ - Displays game title using ASCII.
 
  ![Logo image](assets/images/logo.png)
 
@@ -221,7 +221,7 @@ Lost Message
 - [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
 - [GitHub](https://github.com/) was used to host the code of the website.
 - [Canva Pro](https://www.canva.com/) and [bigimage](https://bigimage.11zon.com/en/image-crop/crop-image-without-losing-quality.php )were used to make and resize images for the README file.
-- [Draw.io](https://www.lucidchart.com/) was used to make a flowchart for the README file.
+- [lucidchart](https://www.lucidchart.com/) was used to make a flowchart for the README file.
 
 ---
 
